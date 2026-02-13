@@ -12,8 +12,9 @@ async function getUserId() {
 // GET
 export async function GET() {
   const userId = await getUserId();
-  if (!userId)
+  if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const langs = await prisma.userLangLevel.findMany({
     where: { userId },
@@ -33,8 +34,9 @@ export async function GET() {
 // POST
 export async function POST(req: NextRequest) {
   const userId = await getUserId();
-  if (!userId)
+  if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const { languageSkills } = await req.json();
 
@@ -59,12 +61,14 @@ export async function POST(req: NextRequest) {
 // DELETE: Delete one language
 export async function DELETE(req: NextRequest) {
   const userId = await getUserId();
-  if (!userId)
+  if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const { languageId } = await req.json();
-  if (!languageId)
+  if (!languageId) {
     return NextResponse.json({ error: "Missing languageId" }, { status: 400 });
+  }
 
   await prisma.userLangLevel.delete({
     where: {
