@@ -36,7 +36,7 @@ export default function LanguagePage() {
         const [langRes, levelRes, skillsRes] = await Promise.all([
           fetch("/api/meta/languages"),
           fetch("/api/meta/levels"),
-          fetch("/api/onboarding/language"),
+          fetch("/api/onboarding/job-seeker/language"),
         ]);
 
         const langData = await langRes.json();
@@ -91,7 +91,7 @@ export default function LanguagePage() {
 
     const languageId = removed[0].languageId;
     if (languageId) {
-      fetch("/api/onboarding/language", {
+      fetch("/api/onboarding/job-seeker/language", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ languageId: Number(languageId) }),
@@ -106,7 +106,7 @@ export default function LanguagePage() {
 
     const valid = languageSkills.filter((s) => s.languageId && s.levelId);
 
-    const res = await fetch("/api/onboarding/language", {
+    const res = await fetch("/api/onboarding/job-seeker/language", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ languageSkills: valid }),

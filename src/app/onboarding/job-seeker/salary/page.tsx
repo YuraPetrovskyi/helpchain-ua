@@ -23,7 +23,7 @@ export default function SalaryPage() {
 
     setLoading(true);
     try {
-      const res = await fetch("/api/onboarding/salary", {
+      const res = await fetch("/api/onboarding/job-seeker/salary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ salaryExpectation: selected }),

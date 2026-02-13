@@ -39,7 +39,7 @@ export default function JobLocationPage() {
       try {
         const [locationsRes, jobLocationRes] = await Promise.all([
           fetch("/api/meta/locations"),
-          fetch("/api/onboarding/job-location"),
+          fetch("/api/onboarding/job-seeker/job-location"),
         ]);
 
         if (locationsRes.ok) {
@@ -77,7 +77,7 @@ export default function JobLocationPage() {
     setError("");
     setLoading(true);
 
-    const res = await fetch("/api/onboarding/job-location", {
+    const res = await fetch("/api/onboarding/job-seeker/job-location", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

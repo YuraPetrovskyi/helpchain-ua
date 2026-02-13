@@ -42,7 +42,7 @@ export default function ProfessionPage() {
       setIsLoading(true);
       try {
         const [professionRes, optionsRes] = await Promise.all([
-          fetch("/api/onboarding/profession"),
+          fetch("/api/onboarding/job-seeker/profession"),
           fetch("/api/meta/job-options"),
         ]);
 
@@ -109,7 +109,7 @@ export default function ProfessionPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("/api/onboarding/profession", {
+      const res = await fetch("/api/onboarding/job-seeker/profession", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

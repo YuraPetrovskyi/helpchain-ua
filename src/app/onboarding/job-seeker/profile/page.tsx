@@ -42,7 +42,7 @@ export default function ProfilePage() {
       setIsLoading(true);
       try {
         const [profileRes, locationsRes] = await Promise.all([
-          fetch("/api/onboarding/profile"),
+          fetch("/api/onboarding/job-seeker/profile"),
           fetch("/api/meta/locations"),
         ]);
 
@@ -82,7 +82,7 @@ export default function ProfilePage() {
     setError("");
     setLoading(true);
 
-    const res = await fetch("/api/onboarding/profile", {
+    const res = await fetch("/api/onboarding/job-seeker/profile", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

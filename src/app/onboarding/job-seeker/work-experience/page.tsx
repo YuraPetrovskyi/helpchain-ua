@@ -44,7 +44,7 @@ export default function WorkExperiencePage() {
       try {
         const [optionsRes, savedRes] = await Promise.all([
           fetch("/api/meta/job-options"),
-          fetch("/api/onboarding/work-experience"),
+          fetch("/api/onboarding/job-seeker/work-experience"),
         ]);
 
         const optionsData = await optionsRes.json();
@@ -122,7 +122,7 @@ export default function WorkExperiencePage() {
     );
 
     try {
-      const res = await fetch("/api/onboarding/work-experience", {
+      const res = await fetch("/api/onboarding/job-seeker/work-experience", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

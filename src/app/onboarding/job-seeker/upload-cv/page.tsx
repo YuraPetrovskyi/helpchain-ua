@@ -73,7 +73,7 @@ export default function UploadCVPage() {
 
     setLoading(true);
     try {
-      const res = await fetch("/api/onboarding/upload-cv", {
+      const res = await fetch("/api/onboarding/job-seeker/upload-cv", {
         method: "POST",
         body: formData,
       });
