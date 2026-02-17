@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE `user` ADD COLUMN `workExperienceSummary` TEXT NULL;
+ALTER TABLE `User` ADD COLUMN `workExperienceSummary` TEXT NULL;
 
 -- CreateTable
 CREATE TABLE `UserWorkExperience` (

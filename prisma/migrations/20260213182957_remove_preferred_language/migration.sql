@@ -5,4 +5,4 @@
 
 */
 -- AlterTable
-ALTER TABLE `user` DROP COLUMN `preferredLanguage`;
+ALTER TABLE `User` DROP COLUMN `preferredLanguage`;

@@ -1,5 +1,5 @@
 -- AlterTable
-ALTER TABLE `user` ADD COLUMN `housingAssistancePreference` ENUM('NO', 'JOB_WITH_HOUSING_ONLY', 'NEED_HELP_MOVING', 'CONSIDERING_OPTIONS') NULL;
+ALTER TABLE `User` ADD COLUMN `housingAssistancePreference` ENUM('NO', 'JOB_WITH_HOUSING_ONLY', 'NEED_HELP_MOVING', 'CONSIDERING_OPTIONS') NULL;
 
 -- CreateTable
 CREATE TABLE `UserJobLocation` (

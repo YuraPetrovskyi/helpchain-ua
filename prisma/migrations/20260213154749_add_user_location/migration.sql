@@ -5,7 +5,7 @@
 
 */
 -- AlterTable
-ALTER TABLE `user` DROP COLUMN `city`,
+ALTER TABLE `User` DROP COLUMN `city`,
     ADD COLUMN `locationId` VARCHAR(191) NULL;
 
 -- AddForeignKey
